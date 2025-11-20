@@ -1,14 +1,12 @@
-local ok_core, _ = pcall(require, "keymaps.keymaps-core")
-if not ok_core then
-  vim.notify("Failed to load core keymaps", vim.log.levels.WARN)
-end
+local keymap_configs = {
+  "core",
+  "terminal",
+  "lsp",
+}
 
-local ok_terminal, _ = pcall(require, "keymaps.keymaps-terminal")
-if not ok_terminal then
-  vim.notify("Failed to load terminal keymaps", vim.log.levels.WARN)
-end
-
-local ok_lsp, _ = pcall(require, "keymaps.keymaps-lsp")
-if not ok_lsp then
-  vim.notify("Failed to load LSP keymaps", vim.log.levels.WARN)
+for _, config_name in ipairs(keymap_configs) do
+  local success, _ = pcall(require, "keymaps.keymaps-" .. config_name)
+  if not success then
+    vim.notify("Failed to load " .. config_name .. " keymaps", vim.log.levels.WARN)
+  end
 end
