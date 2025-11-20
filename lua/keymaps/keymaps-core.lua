@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+map("n", "<leader>uu", "<Cmd>update<CR> <Cmd>source<CR>", { desc = "Reload nvim" })
 
 map("i", "<C-h>", "<Left>", { desc = "Move Left in Insert" })
 map("i", "<C-j>", "<Down>", { desc = "Move Down in Insert" })
