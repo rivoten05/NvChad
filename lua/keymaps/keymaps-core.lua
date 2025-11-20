@@ -11,3 +11,10 @@ map("n", "<C-Up>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
 map("n", "<C-Down>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
 map("n", "<C-Right>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 map("n", "<C-Left>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
+
+-- ## File and Buffer Management
+-- Grouped under leader + f (for 'file') and leader + b (for 'buffer')
+map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
+map("n", "<C-s>", "<cmd>w<cr>", { desc = "Save File" })
+map("i", "<C-s>", "<cmd>w<cr>", { desc = "Save File" })
+map("n", "<leader>qa", "<cmd>qa<cr>", { desc = "Quit All" })
