@@ -80,3 +80,7 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
   pattern = "*",
   command = "setlocal relativenumber",
 })
+
+--remove auto-comment
+vim.cmd "autocmd BufEnter * set formatoptions-=cro"
+vim.cmd "autocmd BufEnter * setlocal formatoptions-=cro"
